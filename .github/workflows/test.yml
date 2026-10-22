@@ -3,7 +3,7 @@ on:
   pull_request
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-2vcpu-ubuntu-2404
     steps:
       - id: file_changes
         uses: trilom/file-changes-action@ce38c8ce2459ca3c303415eec8cb0409857b4272
@@ -25,7 +25,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22.23.4
           cache: 'pnpm'
 
       - name: Install dependencies
